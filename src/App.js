@@ -28,7 +28,24 @@ function App() {
             </button>
           </form>
         </div>
-        <div className="card shadow rounded-0 mb-3 bd-callout bd-callout-success">
+        <div class="alert alert-danger text-center">1 Task Remaining</div>
+        <div className="card shadow rounded-0 bd-callout bd-callout-success">
+          <div className="card-body d-flex justify-content-between align-items-center">
+            <h5 className="mb-0">Task 1</h5>
+            <div className="btn-group">
+              <button className="btn btn-outline-info">
+                <i className="bi-toggle2-on" />
+              </button>
+              <button className="btn btn-primary">
+                <i className="bi-pencil-square" />
+              </button>
+              <button className="btn btn-danger">
+                <i className="bi-trash" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="card shadow rounded-0 bd-callout bd-callout-success">
           <div className="card-body d-flex justify-content-between align-items-center">
             <h5 className="mb-0">Task 1</h5>
             <div className="btn-group">
