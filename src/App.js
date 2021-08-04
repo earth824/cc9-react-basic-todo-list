@@ -28,7 +28,7 @@ function App() {
             </button>
           </form>
         </div>
-        <div class="alert alert-danger text-center">1 Task Remaining</div>
+        <div className="alert alert-danger text-center">1 Task Remaining</div>
         <div className="card shadow rounded-0 bd-callout bd-callout-success">
           <div className="card-body d-flex justify-content-between align-items-center">
             <h5 className="mb-0">Task 1</h5>
