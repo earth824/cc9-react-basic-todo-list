@@ -31,7 +31,7 @@ function App() {
         <div className="alert alert-danger text-center">1 Task Remaining</div>
         <div className="card shadow rounded-0 bd-callout bd-callout-success">
           <div className="card-body d-flex justify-content-between align-items-center">
-            <h5 className="mb-0">Task 1</h5>
+            <span>Task 3</span>
             <div className="btn-group">
               <button className="btn btn-outline-info">
                 <i className="bi-toggle2-on" />
@@ -47,7 +47,7 @@ function App() {
         </div>
         <div className="card shadow rounded-0 bd-callout bd-callout-success">
           <div className="card-body d-flex justify-content-between align-items-center">
-            <h5 className="mb-0">Task 1</h5>
+            <span>Task 2</span>
             <div className="btn-group">
               <button className="btn btn-outline-info">
                 <i className="bi-toggle2-on" />
@@ -63,7 +63,7 @@ function App() {
         </div>
         <div className="card shadow rounded-0 mb-3 bd-callout bd-callout-warning">
           <div className="card-body d-flex justify-content-between align-items-center">
-            <h5 className="mb-0">Task 1</h5>
+            <span>Task 1</span>
             <div className="btn-group">
               <button className="btn btn-outline-info">
                 <i className="bi-toggle2-off" />
