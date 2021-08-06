@@ -1,11 +1,12 @@
 import List from './List';
 
-function ListContainer() {
+function ListContainer({ lists }) {
   return (
     <>
-      <List />
-      <List />
-      <List />
+      {lists.map(item => (
+        <List key={item.id} list={item} /> // List({ key: item.id, list: item })
+        // <List key={item.id} {...item} />
+      ))}
     </>
   );
 }
