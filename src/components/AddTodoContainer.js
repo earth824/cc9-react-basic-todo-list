@@ -2,7 +2,7 @@ import { useState } from 'react';
 import AddButton from './AddButton';
 import AddTodoForm from './AddTodoForm';
 
-function AddTodoContainer() {
+function AddTodoContainer(props) {
   const [isShowAddForm, setIsShowAddForm] = useState(false);
 
   const showAddForm = () => {
@@ -13,7 +13,21 @@ function AddTodoContainer() {
     setIsShowAddForm(false);
   };
 
-  return <>{isShowAddForm ? <AddTodoForm closeAddForm={closeAddForm} /> : <AddButton showAddForm={showAddForm} />}</>;
+  return (
+    <>
+      {isShowAddForm ? (
+        <AddTodoForm closeAddForm={closeAddForm} addList={props.addList} />
+      ) : (
+        <AddButton showAddForm={showAddForm} />
+      )}
+    </>
+  );
+  // return (
+  //   <>
+  //     <AddTodoForm closeAddForm={closeAddForm} isShowAddForm={isShowAddForm} />
+  //     <AddButton showAddForm={showAddForm} isShowAddForm={isShowAddForm} />
+  //   </>
+  // );
 }
 
 export default AddTodoContainer;

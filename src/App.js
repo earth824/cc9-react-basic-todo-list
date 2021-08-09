@@ -14,11 +14,42 @@ const INITIAL_LISTS = [
 
 function App() {
   const [lists, setLists] = useState(INITIAL_LISTS);
+
+  const addList = name => {
+    const newList = {
+      id: uuidv4(),
+      name: name,
+      status: false
+    };
+    const newLists = [...lists];
+    newLists.unshift(newList);
+    setLists(newLists);
+  };
+
+  const deleteList = id => {
+    const idx = lists.findIndex(item => item.id === id);
+    if (idx !== -1) {
+      const newLists = [...lists];
+      newLists.splice(idx, 1);
+      setLists(newLists);
+    }
+  };
+
+  const updateList = (id, list) => {
+    const idx = lists.findIndex(item => item.id === id);
+    if (idx !== -1) {
+      const newLists = [...lists];
+      newLists[idx] = list;
+      setLists(newLists);
+    }
+  };
+
+  const remaining = lists.filter(item => !item.status).length;
   return (
     <Container>
-      <AddTodoContainer />
-      <RemainingMessage />
-      <ListContainer lists={lists} />
+      <AddTodoContainer addList={addList} />
+      <RemainingMessage remaining={remaining} />
+      <ListContainer lists={lists} deleteList={deleteList} updateList={updateList} />
     </Container>
   );
 }
