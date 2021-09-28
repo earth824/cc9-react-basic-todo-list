@@ -58,23 +58,16 @@ function App() {
             </form>
           </div>
 
-          {/* <div className="mb-4 d-flex justify-content-end">
-            <button className="btn btn-success">
-              <i className="bi-plus-lg" />
-            </button>
-          </div> */}
-          <div className="border shadow p-3 mb-4">
-            {/* <div className="d-flex justify-content-end">
-              <button className="btn-close btn-sm text-black-50"></button>
-            </div> */}
-            <form>
-              <div className="mt-3 mb-4">
-                <input type="text" className="form-control is-invalid" id="todo" placeholder="Enter new todo" />
-                <div className="invalid-feedback">Required</div>
+          <div className="py-3 mb-3">
+            <form className="flex-fill">
+              <div className="input-group has-validation">
+                <input type="text" className="form-control is-invalid" placeholder="Enter new todo" />
+                <button className="btn btn-primary">
+                  <i className="bi-save" />
+                </button>
+
+                <div className="invalid-feedback">Error</div>
               </div>
-              <button className="btn btn-secondary">
-                <i className="bi-save" />
-              </button>
             </form>
           </div>
           <div className="card shadow rounded-0">
