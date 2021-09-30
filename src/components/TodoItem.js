@@ -1,11 +1,11 @@
-function TodoItem() {
+function TodoItem({ list: { id, title, status } }) {
   return (
-    <div className="card shadow rounded-0 bd-callout bd-callout-success">
+    <div className={`card shadow rounded-0 bd-callout bd-callout-${status ? 'success' : 'warning'}`}>
       <div className="card-body d-flex justify-content-between align-items-center">
-        <span>Task 3</span>
+        <span>{title}</span>
         <div className="btn-group">
           <button className="btn btn-outline-info">
-            <i className="bi-toggle2-on" />
+            <i className={`bi-toggle2-${status ? 'on' : 'off'}`} />
           </button>
           <button className="btn btn-primary">
             <i className="bi-pencil-square" />

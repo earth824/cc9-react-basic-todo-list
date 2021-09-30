@@ -17,6 +17,7 @@ function LoginForm(props) {
     e.preventDefault();
     try {
       const res = await axios.post('/login', { username, password });
+      console.log(res);
       setToken(res.data.token);
       setUser(jwtDecode(res.data.token));
       history.push('/');
