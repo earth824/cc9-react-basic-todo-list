@@ -1,9 +1,20 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { AuthContext } from '../contexts/authContext';
+import { removeToken } from '../services/localStorage';
 
 function Header() {
-  const { user } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
+
+  const history = useHistory();
+
+  const handleClickLogout = e => {
+    e.preventDefault();
+    removeToken();
+    setUser(null);
+    history.push('/login');
+  };
+
   return (
     <nav className="navbar navbar-expand-sm sticky-top navbar-dark bg-success">
       <div className="container-fluid">
@@ -20,7 +31,7 @@ function Header() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="/" className="nav-link">
+                  <a href="/" className="nav-link" onClick={handleClickLogout}>
                     Logout
                   </a>
                 </li>
